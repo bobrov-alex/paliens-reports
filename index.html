@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отчёты по рекламным кампаниям · Александр Палиенко</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background: #f5f5f7; color: #1d1d1f; padding: 24px;
+  min-height: 100vh;
+}
+.container { max-width: 780px; margin: 0 auto; }
+
+.site-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d2d2d7;
+  margin-bottom: 28px;
+}
+.site-header h1 {
+  font-size: 26px; font-weight: 700; color: #1d1d1f;
+  margin-bottom: 4px;
+}
+.site-header p { font-size: 14px; color: #6e6e73; }
+
+.latest-banner {
+  background: linear-gradient(135deg, #1a4a8a 0%, #2563c8 100%);
+  border-radius: 16px;
+  padding: 22px 24px;
+  color: #fff;
+  margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.latest-banner:hover { opacity: 0.9; }
+.latest-banner .lb-left {}
+.latest-banner .lb-tag {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; opacity: 0.75; margin-bottom: 6px;
+}
+.latest-banner .lb-period { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.latest-banner .lb-kpis {
+  display: flex; gap: 20px; flex-wrap: wrap;
+}
+.latest-banner .lb-kpi { }
+.latest-banner .lb-kpi-val { font-size: 22px; font-weight: 700; }
+.latest-banner .lb-kpi-lbl { font-size: 11px; opacity: 0.75; }
+.latest-banner .lb-arrow {
+  font-size: 24px; opacity: 0.6; flex-shrink: 0;
+}
+@media (max-width: 540px) {
+  .latest-banner { flex-direction: column; align-items: flex-start; }
+  .latest-banner .lb-arrow { display: none; }
+}
+
+.section-title {
+  font-size: 13px; font-weight: 600; color: #6e6e73;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 12px; margin-top: 28px;
+}
+
+.report-list { list-style: none; }
+.report-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+  text-decoration: none; color: inherit;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.15s, transform 0.12s;
+}
+.report-item:hover {
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+.ri-left {}
+.ri-period { font-size: 15px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px; }
+.ri-kpis { font-size: 12px; color: #6e6e73; }
+.ri-arrow { font-size: 18px; color: #aeaeb2; flex-shrink: 0; }
+
+footer {
+  font-size: 11px; color: #aeaeb2;
+  text-align: center; margin-top: 40px;
+  padding-top: 16px; border-top: 1px solid #d2d2d7;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="site-header">
+    <h1>Рекламные кампании</h1>
+    <p>Еженедельные отчёты · Александр Палиенко</p>
+  </div>
+
+  <!-- Latest report banner -->
+  <a class="latest-banner" href="reports/2026-06-02.html">
+    <div class="lb-left">
+      <div class="lb-tag">Последний отчёт</div>
+      <div class="lb-period">2 — 9 июня 2026</div>
+      <div class="lb-kpis">
+        <div class="lb-kpi">
+          <div class="lb-kpi-val">€774</div>
+          <div class="lb-kpi-lbl">Затраты</div>
+        </div>
+        <div class="lb-kpi">
+          <div class="lb-kpi-val">408</div>
+          <div class="lb-kpi-lbl">Подписки IG</div>
+        </div>
+        <div class="lb-kpi">
+          <div class="lb-kpi-val">20 403</div>
+          <div class="lb-kpi-lbl">Просмотры YT ENG</div>
+        </div>
+        <div class="lb-kpi">
+          <div class="lb-kpi-val">95 917</div>
+          <div class="lb-kpi-lbl">Просмотры YT RU</div>
+        </div>
+      </div>
+    </div>
+    <div class="lb-arrow">→</div>
+  </a>
+
+  <!-- Archive -->
+  <div class="section-title">Архив отчётов</div>
+  <ul class="report-list" id="reportList">
+    <li>
+      <a class="report-item" href="reports/2026-06-02.html">
+        <div class="ri-left">
+          <div class="ri-period">2 — 9 июня 2026</div>
+          <div class="ri-kpis">Meta €580 · YouTube ENG $181 · Amazon €14 · 408 подписок</div>
+        </div>
+        <div class="ri-arrow">›</div>
+      </a>
+    </li>
+  </ul>
+
+  <footer>Отчёты генерируются еженедельно · Meta Ads · Google Ads · YouTube Analytics · Amazon Ads</footer>
+</div>
+</body>
+</html>
