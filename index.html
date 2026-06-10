@@ -3,143 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Отчёты по рекламным кампаниям · Александр Палиенко</title>
+<title>Архив отчётов · Александр Палиенко</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  background: #f5f5f7; color: #1d1d1f; padding: 24px;
-  min-height: 100vh;
+  background: #f0f0f5;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; padding: 20px;
 }
-.container { max-width: 780px; margin: 0 auto; }
-
-.site-header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #d2d2d7;
-  margin-bottom: 28px;
-}
-.site-header h1 {
-  font-size: 26px; font-weight: 700; color: #1d1d1f;
-  margin-bottom: 4px;
-}
-.site-header p { font-size: 14px; color: #6e6e73; }
-
-.latest-banner {
-  background: linear-gradient(135deg, #1a4a8a 0%, #2563c8 100%);
-  border-radius: 16px;
-  padding: 22px 24px;
-  color: #fff;
-  margin-bottom: 20px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px;
-  text-decoration: none;
-  transition: opacity 0.15s;
-}
-.latest-banner:hover { opacity: 0.9; }
-.latest-banner .lb-left {}
-.latest-banner .lb-tag {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; opacity: 0.75; margin-bottom: 6px;
-}
-.latest-banner .lb-period { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
-.latest-banner .lb-kpis {
-  display: flex; gap: 20px; flex-wrap: wrap;
-}
-.latest-banner .lb-kpi { }
-.latest-banner .lb-kpi-val { font-size: 22px; font-weight: 700; }
-.latest-banner .lb-kpi-lbl { font-size: 11px; opacity: 0.75; }
-.latest-banner .lb-arrow {
-  font-size: 24px; opacity: 0.6; flex-shrink: 0;
-}
-@media (max-width: 540px) {
-  .latest-banner { flex-direction: column; align-items: flex-start; }
-  .latest-banner .lb-arrow { display: none; }
-}
-
-.section-title {
-  font-size: 13px; font-weight: 600; color: #6e6e73;
-  text-transform: uppercase; letter-spacing: 0.05em;
-  margin-bottom: 12px; margin-top: 28px;
-}
-
-.report-list { list-style: none; }
-.report-item {
+.gate {
   background: #fff;
-  border-radius: 12px;
-  padding: 16px 18px;
-  margin-bottom: 10px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px;
-  text-decoration: none; color: inherit;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  transition: box-shadow 0.15s, transform 0.12s;
+  border-radius: 18px;
+  padding: 36px 32px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  text-align: center;
 }
-.report-item:hover {
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-  transform: translateY(-1px);
+.logo { font-size: 32px; margin-bottom: 12px; }
+.gate h1 { font-size: 17px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px; }
+.gate p { font-size: 13px; color: #6e6e73; margin-bottom: 24px; line-height: 1.4; }
+input[type=password] {
+  width: 100%; padding: 12px 14px;
+  border: 1.5px solid #d2d2d7; border-radius: 10px;
+  font-size: 15px; outline: none; transition: border-color 0.2s; margin-bottom: 12px;
 }
-.ri-left {}
-.ri-period { font-size: 15px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px; }
-.ri-kpis { font-size: 12px; color: #6e6e73; }
-.ri-arrow { font-size: 18px; color: #aeaeb2; flex-shrink: 0; }
-
-footer {
-  font-size: 11px; color: #aeaeb2;
-  text-align: center; margin-top: 40px;
-  padding-top: 16px; border-top: 1px solid #d2d2d7;
+input[type=password]:focus { border-color: #2563c8; }
+button {
+  width: 100%; padding: 13px;
+  background: #2563c8; color: #fff; border: none;
+  border-radius: 10px; font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: background 0.15s;
 }
+button:hover { background: #1a4a8a; }
+.err { font-size: 13px; color: #c0392b; margin-top: 10px; display: none; }
+.loading { font-size: 13px; color: #6e6e73; margin-top: 10px; display: none; }
 </style>
 </head>
 <body>
-<div class="container">
-
-  <div class="site-header">
-    <h1>Рекламные кампании</h1>
-    <p>Еженедельные отчёты · Александр Палиенко</p>
-  </div>
-
-  <!-- Latest report banner -->
-  <a class="latest-banner" href="reports/2026-06-02.html">
-    <div class="lb-left">
-      <div class="lb-tag">Последний отчёт</div>
-      <div class="lb-period">2 — 9 июня 2026</div>
-      <div class="lb-kpis">
-        <div class="lb-kpi">
-          <div class="lb-kpi-val">€774</div>
-          <div class="lb-kpi-lbl">Затраты</div>
-        </div>
-        <div class="lb-kpi">
-          <div class="lb-kpi-val">408</div>
-          <div class="lb-kpi-lbl">Подписки IG</div>
-        </div>
-        <div class="lb-kpi">
-          <div class="lb-kpi-val">20 403</div>
-          <div class="lb-kpi-lbl">Просмотры YT ENG</div>
-        </div>
-        <div class="lb-kpi">
-          <div class="lb-kpi-val">95 917</div>
-          <div class="lb-kpi-lbl">Просмотры YT RU</div>
-        </div>
-      </div>
-    </div>
-    <div class="lb-arrow">→</div>
-  </a>
-
-  <!-- Archive -->
-  <div class="section-title">Архив отчётов</div>
-  <ul class="report-list" id="reportList">
-    <li>
-      <a class="report-item" href="reports/2026-06-02.html">
-        <div class="ri-left">
-          <div class="ri-period">2 — 9 июня 2026</div>
-          <div class="ri-kpis">Meta €580 · YouTube ENG $181 · Amazon €14 · 408 подписок</div>
-        </div>
-        <div class="ri-arrow">›</div>
-      </a>
-    </li>
-  </ul>
-
-  <footer>Отчёты генерируются еженедельно · Meta Ads · Google Ads · YouTube Analytics · Amazon Ads</footer>
+<div class="gate">
+  <div class="logo">📊</div>
+  <h1>Архив отчётов</h1>
+  <p>Александр Палиенко · Доступ защищён паролем</p>
+  <input type="password" id="pwd" placeholder="Введите пароль" autofocus
+         onkeydown="if(event.key==='Enter') unlock()">
+  <button onclick="unlock()">Открыть архив</button>
+  <div class="err" id="err">Неверный пароль. Попробуйте ещё раз.</div>
+  <div class="loading" id="loading">Открываю…</div>
 </div>
+
+<script>
+const PAYLOAD = {"ct": "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", "iv": "lp+Vpyvje6RDHvMDuQt1nA==", "s": "sFijT3XlMYbHAgoopEm9/WmeMK4ZCE+A1ZNAib14vtA="};
+const SESSION_KEY = 'paliens_pw';
+
+async function deriveKey(password, salt) {
+  const enc = new TextEncoder();
+  const keyMaterial = await crypto.subtle.importKey(
+    'raw', enc.encode(password), 'PBKDF2', false, ['deriveBits']
+  );
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', salt: salt, iterations: 600000, hash: 'SHA-256' },
+    keyMaterial, 256
+  );
+  return crypto.subtle.importKey('raw', bits, { name: 'AES-CBC' }, false, ['decrypt']);
+}
+
+function b64ToBytes(b64) {
+  const bin = atob(b64);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return bytes;
+}
+
+async function tryDecrypt(pwd, showError) {
+  try {
+    const salt = b64ToBytes(PAYLOAD.s);
+    const iv   = b64ToBytes(PAYLOAD.iv);
+    const ct   = b64ToBytes(PAYLOAD.ct);
+    const key  = await deriveKey(pwd, salt);
+    const decrypted = await crypto.subtle.decrypt({ name: 'AES-CBC', iv }, key, ct);
+    const html = new TextDecoder().decode(decrypted).replace(/\x00+$/, '').trimEnd();
+    // Save password to session so other pages auto-decrypt
+    sessionStorage.setItem(SESSION_KEY, pwd);
+    document.open();
+    document.write(html);
+    document.close();
+  } catch(e) {
+    if (showError) {
+      document.getElementById('err').style.display = 'block';
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('pwd').value = '';
+      document.getElementById('pwd').focus();
+    }
+  }
+}
+
+async function unlock() {
+  const pwd = document.getElementById('pwd').value;
+  if (!pwd) return;
+  document.getElementById('err').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  await tryDecrypt(pwd, true);
+}
+
+// Auto-decrypt if password already in session (user already authenticated on another page)
+window.addEventListener('DOMContentLoaded', async () => {
+  const saved = sessionStorage.getItem(SESSION_KEY);
+  if (saved) {
+    document.getElementById('loading').style.display = 'block';
+    document.querySelector('.gate p').textContent = 'Открываю…';
+    document.querySelector('input').style.display = 'none';
+    document.querySelector('button').style.display = 'none';
+    await tryDecrypt(saved, false);
+  }
+});
+</script>
 </body>
 </html>
