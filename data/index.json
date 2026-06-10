@@ -1,0 +1,19 @@
+{
+  "reports": [
+    {
+      "id": "2026-06-02",
+      "dateFrom": "2026-06-02",
+      "dateTo": "2026-06-09",
+      "label": "2 — 9 июня 2026",
+      "file": "reports/2026-06-02.html",
+      "kpi": {
+        "spendMeta": 579.84,
+        "spendYT": 180.93,
+        "spendAmazon": 13.74,
+        "subsInstagram": 408,
+        "viewsYTEng": 20403,
+        "viewsYTRu": 95917
+      }
+    }
+  ]
+}
