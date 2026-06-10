@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отчёт · Александр Палиенко · 2–9 июня 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#f5f5f7;color:#1d1d1f;padding:16px}
+.wrap{max-width:1100px;margin:0 auto}
+.hdr{padding-bottom:14px;border-bottom:1px solid #d2d2d7;margin-bottom:20px}
+.hdr-sub{font-size:12px;color:#6e6e73;margin-bottom:3px}
+.hdr-title{font-size:clamp(17px,4vw,24px);font-weight:600}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px}
+@media(max-width:480px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:#fff;border-radius:12px;padding:13px 14px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.kpi-lbl{font-size:11px;color:#6e6e73;margin-bottom:5px;line-height:1.3}
+.kpi-val{font-size:clamp(16px,3.5vw,22px);font-weight:600;line-height:1}
+.kpi-sub{font-size:10px;color:#6e6e73;margin-top:4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+@media(max-width:600px){.two{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:14px;padding:15px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.card-title{font-size:11px;font-weight:600;color:#6e6e73;text-transform:uppercase;letter-spacing:.04em;margin-bottom:9px}
+.leg{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px;font-size:10px;color:#6e6e73}
+.leg span{display:flex;align-items:center;gap:4px}
+.leg i{width:8px;height:8px;border-radius:2px;flex-shrink:0;display:inline-block}
+svg{display:block;width:100%;height:auto}
+.wide{background:#fff;border-radius:14px;padding:15px;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:16px}
+footer{font-size:10px;color:#aeaeb2;text-align:center;margin-top:20px;padding-top:14px;border-top:1px solid #d2d2d7;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">
+  <p class="hdr-sub">Период отчёта</p>
+  <h1 class="hdr-title">2 — 9 июня 2026 · Александр Палиенко</h1>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi"><p class="kpi-lbl">Затраты Meta</p><p class="kpi-val">€579,84</p><p class="kpi-sub">FUTUROLOGY + INSTA RU</p></div>
+  <div class="kpi"><p class="kpi-lbl">Затраты YouTube ENG</p><p class="kpi-val">$180,93</p><p class="kpi-sub">MEN + WOMEN + FUT</p></div>
+  <div class="kpi"><p class="kpi-lbl">Затраты Amazon DE</p><p class="kpi-val">€13,74</p><p class="kpi-sub">SP + Kindle</p></div>
+  <div class="kpi"><p class="kpi-lbl">Подписки Instagram</p><p class="kpi-val">408</p><p class="kpi-sub">4 гео-направления</p></div>
+  <div class="kpi"><p class="kpi-lbl">Просмотры YT ENG</p><p class="kpi-val">20 403</p><p class="kpi-sub">Платные · Google Ads</p></div>
+  <div class="kpi"><p class="kpi-lbl">Просмотры RU канал</p><p class="kpi-val">95 917</p><p class="kpi-sub">Органика 2–9 июня</p></div>
+</div>
+
+<div class="two">
+  <div class="card">
+    <p class="card-title">Затраты Meta по кампаниям (€)</p>
+    <div class="leg">
+      <span><i style="background:#3266ad"></i>FUTUROLOGY</span>
+      <span><i style="background:#22a474"></i>INSTA RU</span>
+    </div>
+    <div id="c1"></div>
+  </div>
+  <div class="card">
+    <p class="card-title">Распределение бюджета</p>
+    <div class="leg">
+      <span><i style="background:#3266ad"></i>FUT тёплая €271</span>
+      <span><i style="background:#5b9fea"></i>FUT холодная €31</span>
+      <span><i style="background:#22a474"></i>INSTA RU €277</span>
+      <span><i style="background:#e85d3c"></i>YouTube ENG $181</span>
+      <span><i style="background:#888780"></i>Amazon €14</span>
+    </div>
+    <div id="c2"></div>
+  </div>
+</div>
+
+<div class="two">
+  <div class="card">
+    <p class="card-title">Подписки Instagram по гео</p>
+    <div id="c3"></div>
+  </div>
+  <div class="card">
+    <p class="card-title">Цена за подписку по гео ($)</p>
+    <div id="c4"></div>
+  </div>
+</div>
+
+<div class="two">
+  <div class="card">
+    <p class="card-title">YouTube ENG · просмотры</p>
+    <div class="leg">
+      <span><i style="background:#e85d3c"></i>MEN 5 545</span>
+      <span><i style="background:#f0a58a"></i>WOMEN 11 419</span>
+      <span><i style="background:#c43e20"></i>FUT 3 439</span>
+    </div>
+    <div id="c5"></div>
+  </div>
+  <div class="card">
+    <p class="card-title">Новые спонсоры по дням</p>
+    <div class="leg">
+      <span><i style="background:#7f77dd"></i>ПРОГНОЗ (41, нетто −8)</span>
+      <span><i style="background:#afa9ec"></i>ФУТУРОЛОГИЯ (15, нетто +2)</span>
+    </div>
+    <div id="c6"></div>
+  </div>
+</div>
+
+<div class="wide">
+  <p class="card-title">Динамика просмотров YouTube по дням</p>
+  <div class="leg">
+    <span><i style="background:#3266ad"></i>RU канал — левая ось</span>
+    <span><i style="background:#e85d3c"></i>ENG канал — правая ось</span>
+  </div>
+  <div id="c7"></div>
+</div>
+
+<footer>
+  Отчёт сгенерирован автоматически<br>
+  Meta Ads · Google Ads · YouTube Analytics · Amazon Ads · 2–9 июня 2026
+</footer>
+</div>
+
+<script>
+// ── Pure SVG chart engine — no Canvas, no CDN, works everywhere ────────────
+const NS = 'http://www.w3.org/2000/svg';
+
+function svgEl(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  if (attrs) Object.entries(attrs).forEach(([k,v]) => e.setAttribute(k, v));
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function svgTxt(text, attrs, parent) {
+  const e = svgEl('text', attrs, parent);
+  e.textContent = text;
+  return e;
+}
+
+// ── Bar chart ──────────────────────────────────────────────────────────────
+function svgBar(id, labels, datasets, opts) {
+  opts = opts || {};
+  var VW=420, VH=220, pL=48, pR=10, pT=10, pB=38;
+  var cW=VW-pL-pR, cH=VH-pT-pB;
+  var stacked=!!opts.stacked, n=labels.length, ds=datasets.length;
+
+  var svg = svgEl('svg', {viewBox:'0 0 '+VW+' '+VH, width:'100%', height:'auto'});
+
+  var maxV=0;
+  if(stacked){
+    for(var i=0;i<n;i++){var s=0; datasets.forEach(function(d){s+=d.data[i]||0;}); maxV=Math.max(maxV,s);}
+  } else {
+    datasets.forEach(function(d){d.data.forEach(function(v){maxV=Math.max(maxV,v);});});
+  }
+  maxV*=1.18;
+
+  // Grid
+  for(var gi=0;gi<=4;gi++){
+    var gy=pT+cH-(gi/4)*cH;
+    svgEl('line',{x1:pL,y1:gy,x2:pL+cW,y2:gy,stroke:'#f0f0f0','stroke-width':1},svg);
+    var gv=(gi/4)*maxV;
+    var glbl = opts.yFmt ? opts.yFmt(gv) : (gv>=1000?(gv/1000).toFixed(0)+'k':gv.toFixed(0));
+    svgTxt(glbl,{x:pL-4,y:gy+4,'text-anchor':'end','font-size':9,'fill':'#aeaeb2','font-family':'Arial,sans-serif'},svg);
+  }
+
+  var groupW=cW/n;
+  var barGap=2;
+  var barW=stacked?groupW*0.55:Math.max(5,(groupW-(ds+1)*barGap)/ds);
+  var r=3;
+
+  labels.forEach(function(lbl,i){
+    var gx=pL+i*groupW+groupW/2;
+    var stackBase=0;
+
+    datasets.forEach(function(d,di){
+      var v=d.data[i]||0;
+      if(v<=0){if(stacked)stackBase+=v; return;}
+      var bh=(v/maxV)*cH;
+      var bx=stacked?gx-barW/2:gx-(ds/2-di)*barW-(ds/2-di)*barGap+barGap/2-barW/2;
+      var by=stacked?pT+cH-((stackBase+v)/maxV)*cH:pT+cH-bh;
+      var ah=stacked?(v/maxV)*cH:bh;
+
+      svgEl('rect',{x:bx.toFixed(1),y:by.toFixed(1),width:barW.toFixed(1),height:Math.max(ah,1).toFixed(1),rx:r,ry:r,fill:d.color},svg);
+
+      if(!stacked && ah>16 && barW>15){
+        var lv=v>=100?v.toFixed(0):(v<10?v.toFixed(2):v.toFixed(1));
+        svgTxt(lv,{x:(bx+barW/2).toFixed(1),y:(by+ah-4).toFixed(1),'text-anchor':'middle','font-size':7.5,'fill':'#fff','font-weight':'bold','font-family':'Arial,sans-serif'},svg);
+      }
+      if(stacked) stackBase+=v;
+    });
+
+    var short=lbl.length>10?lbl.slice(0,10)+'…':lbl;
+    svgTxt(short,{x:gx.toFixed(1),y:VH-pB+14,'text-anchor':'middle','font-size':9,'fill':'#6e6e73','font-family':'Arial,sans-serif'},svg);
+  });
+
+  document.getElementById(id).appendChild(svg);
+}
+
+// ── Doughnut ───────────────────────────────────────────────────────────────
+function svgDonut(id, data, colors, centerLabel) {
+  var VW=260, VH=220, cx=VW/2, cy=VH/2, oR=90, iR=52;
+  var svg = svgEl('svg', {viewBox:'0 0 '+VW+' '+VH, width:'100%', height:'auto'});
+  var total=data.reduce(function(a,b){return a+b;},0);
+  var angle=-Math.PI/2;
+
+  data.forEach(function(v,i){
+    var slice=(v/total)*Math.PI*2;
+    var a0=angle, a1=angle+slice-0.02;
+    var x1=cx+oR*Math.cos(a0), y1=cy+oR*Math.sin(a0);
+    var x2=cx+oR*Math.cos(a1), y2=cy+oR*Math.sin(a1);
+    var x3=cx+iR*Math.cos(a1), y3=cy+iR*Math.sin(a1);
+    var x4=cx+iR*Math.cos(a0), y4=cy+iR*Math.sin(a0);
+    var lg=slice>Math.PI?1:0;
+    var d='M'+x1.toFixed(2)+','+y1.toFixed(2)+
+          ' A'+oR+','+oR+' 0 '+lg+' 1 '+x2.toFixed(2)+','+y2.toFixed(2)+
+          ' L'+x3.toFixed(2)+','+y3.toFixed(2)+
+          ' A'+iR+','+iR+' 0 '+lg+' 0 '+x4.toFixed(2)+','+y4.toFixed(2)+'Z';
+    svgEl('path',{d:d,fill:colors[i],stroke:'#fff','stroke-width':2.5},svg);
+    angle+=slice;
+  });
+
+  var cl=centerLabel||(total>=1000?(total/1000).toFixed(1)+'k':total.toFixed(0));
+  svgTxt(cl,{x:cx,y:cy+5,'text-anchor':'middle','font-size':14,'fill':'#1d1d1f','font-weight':'bold','font-family':'Arial,sans-serif'},svg);
+  svgTxt('итого',{x:cx,y:cy+18,'text-anchor':'middle','font-size':9,'fill':'#6e6e73','font-family':'Arial,sans-serif'},svg);
+
+  document.getElementById(id).appendChild(svg);
+}
+
+// ── Line chart (dual Y) ────────────────────────────────────────────────────
+function svgLine(id, labels, ds0, ds1) {
+  var VW=560, VH=240, pL=52, pR=52, pT=12, pB=36;
+  var cW=VW-pL-pR, cH=VH-pT-pB;
+  var svg = svgEl('svg', {viewBox:'0 0 '+VW+' '+VH, width:'100%', height:'auto'});
+
+  var maxL=Math.max.apply(null,ds0.data)*1.12;
+  var maxR=Math.max.apply(null,ds1.data)*1.15;
+
+  for(var gi=0;gi<=4;gi++){
+    var gy=pT+cH-(gi/4)*cH;
+    svgEl('line',{x1:pL,y1:gy,x2:pL+cW,y2:gy,stroke:'#f0f0f0','stroke-width':1},svg);
+    var vL=(gi/4)*maxL;
+    svgTxt(vL>=1000?(vL/1000).toFixed(0)+'k':vL.toFixed(0),{x:pL-4,y:gy+4,'text-anchor':'end','font-size':9,'fill':'#3266ad','font-family':'Arial,sans-serif'},svg);
+    var vR=(gi/4)*maxR;
+    svgTxt(vR>=1000?(vR/1000).toFixed(1)+'k':vR.toFixed(0),{x:pL+cW+4,y:gy+4,'text-anchor':'start','font-size':9,'fill':'#e85d3c','font-family':'Arial,sans-serif'},svg);
+  }
+
+  [ds0, ds1].forEach(function(ds, di){
+    var maxY=di===0?maxL:maxR;
+    var xStep=cW/(labels.length-1);
+    var pts=ds.data.map(function(v,i){return {x:pL+i*xStep, y:pT+cH-(v/maxY)*cH};});
+
+    // Area fill
+    var aD='M'+pL+','+(pT+cH)+' '+pts.map(function(p){return p.x.toFixed(1)+','+p.y.toFixed(1);}).join(' ')
+          +' '+(pL+cW)+','+(pT+cH)+'Z';
+    svgEl('path',{d:aD,fill:ds.color,opacity:'0.08'},svg);
+
+    // Line
+    var lD='M'+pts.map(function(p){return p.x.toFixed(1)+','+p.y.toFixed(1);}).join(' L');
+    var la={d:lD,fill:'none',stroke:ds.color,'stroke-width':2.2,'stroke-linejoin':'round'};
+    if(di===1) la['stroke-dasharray']='5,4';
+    svgEl('path',la,svg);
+
+    // Dots
+    pts.forEach(function(p){
+      svgEl('circle',{cx:p.x.toFixed(1),cy:p.y.toFixed(1),r:4,fill:ds.color,stroke:'#fff','stroke-width':2},svg);
+    });
+  });
+
+  var xStep=cW/(labels.length-1);
+  labels.forEach(function(lbl,i){
+    svgTxt(lbl,{x:(pL+i*xStep).toFixed(1),y:VH-pB+14,'text-anchor':'middle','font-size':9,'fill':'#6e6e73','font-family':'Arial,sans-serif'},svg);
+  });
+
+  document.getElementById(id).appendChild(svg);
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────
+var DAYS=['2 июн','3 июн','4 июн','5 июн','6 июн','7 июн','8 июн','9 июн'];
+
+svgBar('c1',
+  ['Конверс.','Охват','Трафик','Холодн.','America','Ukraine','Poland','C.Eu'],
+  [{color:'#3266ad',data:[151.17,59.47,60.64,31.37,0,0,0,0]},
+   {color:'#22a474',data:[0,0,0,0,79.05,38.92,79.11,80.09]}],
+  {yFmt:function(v){return v>0?'€'+v.toFixed(0):'';}}
+);
+
+svgDonut('c2',[271.28,31.37,277.17,180.93,13.74],
+  ['#3266ad','#5b9fea','#22a474','#e85d3c','#888780']);
+
+svgBar('c3',
+  ['America/CA','Ukraine','Poland/BL','Central EU'],
+  [{color:'#22a474',data:[47,104,129,128]}]
+);
+
+svgBar('c4',
+  ['America/CA','Ukraine','Poland/BL','Central EU'],
+  [{color:'#e85d3c',data:[1.68,0,0,0]},
+   {color:'#22a474',data:[0,0.37,0,0]},
+   {color:'#3266ad',data:[0,0,0.61,0]},
+   {color:'#7f77dd',data:[0,0,0,0.63]}],
+  {yFmt:function(v){return v>0?'$'+v.toFixed(2):'';}}
+);
+
+svgDonut('c5',[5545,11419,3439],
+  ['#e85d3c','#f0a58a','#c43e20'],'20.4k');
+
+svgBar('c6', DAYS,
+  [{color:'#7f77dd',data:[8,5,4,5,8,4,7,0]},
+   {color:'#afa9ec',data:[0,4,0,6,1,3,1,0]}],
+  {stacked:true}
+);
+
+svgLine('c7', DAYS,
+  {color:'#3266ad',data:[12681,11350,9780,11909,12850,10629,14499,12219]},
+  {color:'#e85d3c',data:[152,48,3558,6309,5209,4605,3774,3482]}
+);
+</script>
+</body>
+</html>
